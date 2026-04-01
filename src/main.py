@@ -1,7 +1,7 @@
 import json
 from typing import List
 from pydantic import TypeAdapter
-from llm_sdk.llm_sdk import Small_LLM_Model
+from llm_sdk import Small_LLM_Model
 from models import FunctionTest, FunctionDefinition
 from src.processor import ConstrainedDecoder
 
@@ -33,6 +33,7 @@ if __name__ == "__main__":
         print(f"Traitement du prompt : {test.prompt}")
         json_output = decoder.generate(test.prompt, functions)
         results.append(json_output)
+        print(json_output)
     # 5. Sauvegarde finale (Étape 5)
     # ... code pour écrire dans data/output/ ...
     # print(functions)
