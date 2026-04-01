@@ -12,7 +12,7 @@ install:
 
 # RUN : Exécute le script principal via l'environnement virtuel de uv
 run:
-	uv run python $(MAIN_SCRIPT)
+	PYTHONPATH=. uv run python $(MAIN_SCRIPT)
 
 # DEBUG : Lance le debugger pdb
 debug:
