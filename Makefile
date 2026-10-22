@@ -1,6 +1,6 @@
 # Variables
 PYTHON_VERSION = 3.10
-MAIN_SCRIPT = src/main.py 
+MAIN_SCRIPT = src
 
 # Règle par défaut
 all: install lint run
@@ -12,7 +12,7 @@ install:
 
 # RUN : Exécute le script principal via l'environnement virtuel de uv
 run:
-	PYTHONPATH=. uv run python $(MAIN_SCRIPT)
+	uv run python -m $(MAIN_SCRIPT)
 
 # DEBUG : Lance le debugger pdb
 debug:

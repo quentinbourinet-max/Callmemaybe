@@ -9,5 +9,24 @@ dependencies = [
     "transformers>=4.40.0",
     "huggingface-hub>=0.20.0",
     "pydantic>=2.12.5",
-    "accelerate>=1.13.0",
+	"accelerate>=1.13.0",
 ]
+[dependency-groups]
+dev = [
+    "flake8>=7.1.1",
+    "mypy>=1.15.0",
+]
+
+[tool.mypy]
+explicit_package_bases = true
+ignore_missing_imports = true
+strict = false
+python_executable = ".venv/bin/python"
+exclude = [
+    "llm_sdk",
+]
+
+[[tool.mypy.overrides]]
+module = "llm_sdk.*"
+ignore_errors = true
+follow_imports = "silent"
